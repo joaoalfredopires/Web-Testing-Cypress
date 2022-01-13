@@ -14,24 +14,29 @@ import {
     homePage,
     categoryPage,
     loginPage,
-    myAccountPage } from "../support/pages"
+    myAccountPage,
+    createAnAccountPage } from "../support/pages"
 
 describe("Fluxos do ecommerce", () => {
     
     categoryPage.CATEGORIES.forEach(category => {
 
-        it(` Acessar categoria ${ category }`, () => {
+        it.skip(` Acessar categoria ${ category }`, () => {
 
         homePage.acessarCategoria(category);
         categoryPage.validarAcessoCategoria(category); 
-        });
-
-        
+        });        
     });
 
-    it("Fazer login", () => {
+    it.skip("Fazer login", () => {
         homePage.acessarLogin();
         loginPage.preencherDadosLogin();
         myAccountPage.validarLoginComSucesso();
+    });
+
+    it("Fazer cadastro", () => {
+        homePage.acessarLogin();
+        loginPage.preencherCampoCriacaoDeConta();
+        createAnAccountPage.
     });
 });
