@@ -1,4 +1,4 @@
 export const ELEMENTS = {
     account: ".account > span",
-    page_heading: ".page-heading"
+    page_heading: "h1.page-heading"
 }

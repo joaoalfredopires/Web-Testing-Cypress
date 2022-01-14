@@ -15,20 +15,23 @@ import {
     categoryPage,
     loginPage,
     myAccountPage,
-    createAnAccountPage } from "../support/pages"
+    createAnAccountPage 
+} from "../support/pages/"
+
 
 describe("Fluxos do ecommerce", () => {
+
     
     categoryPage.CATEGORIES.forEach(category => {
 
-        it.skip(` Acessar categoria ${ category }`, () => {
+        it(` Acessar categoria ${ category }`, () => {
 
         homePage.acessarCategoria(category);
         categoryPage.validarAcessoCategoria(category); 
         });        
     });
 
-    it.skip("Fazer login", () => {
+    it("Fazer login", () => {
         homePage.acessarLogin();
         loginPage.preencherDadosLogin();
         myAccountPage.validarLoginComSucesso();
@@ -37,6 +40,9 @@ describe("Fluxos do ecommerce", () => {
     it("Fazer cadastro", () => {
         homePage.acessarLogin();
         loginPage.preencherCampoCriacaoDeConta();
-        createAnAccountPage.
+        cy.wait(5000);                                      // Wait e assert incluídos devido a problemas 
+        createAnAccountPage.validarPaginaCriacaoDeConta();  // de performance no site.
+        createAnAccountPage.preencherDadosCriacaoDeConta();
+        myAccountPage.validarCadastroComSucesso();
     });
 });

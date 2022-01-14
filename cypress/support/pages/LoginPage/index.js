@@ -2,6 +2,7 @@ const el = require("./elements").ELEMENTS;
 
 class  LoginPage {
 
+    
 
     preencherDadosLogin(){
         cy.get(el.email).type("email_de_teste@gmail.com");
@@ -10,9 +11,10 @@ class  LoginPage {
     }
 
     preencherCampoCriacaoDeConta(){
-        cy.get(el.email_create).type("fulaninhosilva@email.com");
+        cy.get(el.email_create).type("emailaleatorio"+ Date.now() +"@mail.com");
         cy.get(el.submit_create).click();
     }
+    
 }
 
 export default new LoginPage();

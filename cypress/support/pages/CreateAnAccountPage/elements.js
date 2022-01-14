@@ -1,6 +1,6 @@
 export const ELEMENTS = {
     pageHeadingH1:".page-heading",
-    gender_radio:"#id_gender1",
+    gender_radio:"#id_gender1[type=radio]",
     firstName_informations:"#customer_firstname",
     lastName_informations:"#customer_lastname",
     email:"#email",

@@ -23,3 +23,5 @@ beforeEach(() => {
     cy.clearCookies();
     cy.visit("/index.php")  
 });
+
+
