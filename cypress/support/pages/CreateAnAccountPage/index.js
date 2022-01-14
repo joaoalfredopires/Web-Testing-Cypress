@@ -30,10 +30,6 @@ class  CreateAnAccountPage {
         cy.get(el.pageHeadingH1).should("have.text", "Create an account");
     }
     
-    validarCadastroComSucesso(){
-        cy.get(el.page_heading).should("have.text", "My account");
-        cy.get(el.account).should("have.text", "Fulaninho Silva");
-    }
 }
 
 export default new CreateAnAccountPage();
